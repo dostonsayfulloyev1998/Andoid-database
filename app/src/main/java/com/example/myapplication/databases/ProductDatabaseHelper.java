@@ -1,5 +1,6 @@
 package com.example.myapplication.databases;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -45,18 +46,32 @@ public class ProductDatabaseHelper extends SQLiteOpenHelper {
          SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery("select *from "+TABLE_NAME,null);
         ArrayList<ProductData> productData = new ArrayList<>();
-        while (cursor.moveToNext()){
+        cursor.moveToFirst();
+        do{
             String name = cursor.getString(1);
             String price = cursor.getString(2);
             int c_id = cursor.getInt(3);
 
             productData.add(new ProductData(name,price,c_id));
-        }
+        }while (cursor.moveToNext());
         cursor.close();
 
         return productData;
     }
 
+
+    public long insert(String name,String price,int c_id){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+
+        values.put(COLUMN_NAME,name);
+        values.put(COLUMN_PRICE,price);
+        values.put(COLUMN_C_ID,c_id);
+
+        long t =  db.insert(TABLE_NAME,null,values);
+
+        return t;
+    }
 
 
 }

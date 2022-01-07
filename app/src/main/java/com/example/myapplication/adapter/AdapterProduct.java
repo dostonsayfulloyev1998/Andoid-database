@@ -39,7 +39,7 @@ public class AdapterProduct extends RecyclerView.Adapter<MyViewHolder> {
 
         holder.name.setText(name);
         holder.prise.setText(prise);
-        holder.id.setText(id);
+        holder.id.setText(id+"");
 
 
     }
