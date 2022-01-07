@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.myapplication.databases;
 
 import android.content.Context;
 import android.database.Cursor;
@@ -14,10 +14,10 @@ import java.util.ArrayList;
 public class ProductDatabaseHelper extends SQLiteOpenHelper {
   private final static String DATABASE_NAME = "baza";
   private final static String TABLE_NAME = "product";
-  private final static String COLUMN_NAME = "name";
+    private final static String COLUMN_ID = "id";
+    private final static String COLUMN_NAME = "name";
   private final static String COLUMN_PRICE = "price";
   private final static String COLUMN_C_ID = "c_id";
-  private final static String COLUMN_ID = "id";
 
     public ProductDatabaseHelper(@Nullable Context context) {
         super(context, DATABASE_NAME, null, 1);
