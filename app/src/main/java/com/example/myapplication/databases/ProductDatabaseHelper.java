@@ -25,13 +25,14 @@ public class ProductDatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-         String table = "create table "+TABLE_NAME+"(" +
-                 COLUMN_ID+"integer primary key autoincrement," +
-                 COLUMN_NAME+" text," +
-                 COLUMN_PRICE+" text," +
-                 COLUMN_C_ID+" integer);";
+        String query = "CREATE TABLE " + TABLE_NAME +
+                " (" + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                COLUMN_NAME + " TEXT, " +
+                COLUMN_PRICE + " TEXT, " +
+                COLUMN_C_ID + " INTEGER);";
+        db.execSQL(query);
 
-         db.execSQL(table);
+
     }
 
     @Override

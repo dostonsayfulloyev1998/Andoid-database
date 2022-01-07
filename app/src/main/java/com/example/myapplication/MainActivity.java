@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
         adapterProduct = new AdapterProduct(list,this);
         resProduct.setAdapter(adapterProduct);
     }
+
     public void loadData(){
         list = new ArrayList<>();
         productDatabaseHelper = new ProductDatabaseHelper(this);
