@@ -50,7 +50,8 @@ public class AdapterProduct extends RecyclerView.Adapter<MyViewHolder> {
     }
 
 }
-class  MyViewHolder extends RecyclerView.ViewHolder{
+class
+MyViewHolder extends RecyclerView.ViewHolder{
 
     TextView name;
     TextView prise, id;
