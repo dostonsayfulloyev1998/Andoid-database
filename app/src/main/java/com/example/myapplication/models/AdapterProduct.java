@@ -1,11 +1,15 @@
 package com.example.myapplication.models;
 
 import android.content.Context;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.myapplication.R;
 
 import java.util.ArrayList;
 
@@ -22,23 +26,37 @@ public class AdapterProduct extends RecyclerView.Adapter<MyViewHolder> {
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return null;
+        View itemView= LayoutInflater.from(context).inflate(R.layout.layout_item_product,parent,false);
+        return  new MyViewHolder(itemView);
     }
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+        String name=list.get(position).getName();
+        String prise=list.get(position).getPrice();
+        int id=list.get(position).getC_id();
+
+        holder.name.setText(name);
+        holder.prise.setText(prise);
+        holder.id.setText(id);
+
 
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return list.size();
     }
 
 }
 class  MyViewHolder extends RecyclerView.ViewHolder{
 
+    TextView name;
+    TextView prise, id;
     public MyViewHolder(@NonNull View itemView) {
         super(itemView);
+        name=itemView.findViewById(R.id.name);
+        prise=itemView.findViewById(R.id.prise);
+        id=itemView.findViewById(R.id.id);
     }
 }
