@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 public class MainActivity2 extends AppCompatActivity {
 
@@ -55,6 +56,7 @@ public class MainActivity2 extends AppCompatActivity {
                 if (null != selectedImageUri) {
                     // update the preview image in the layout
                     image.setImageURI(selectedImageUri);
+                    Toast.makeText(this,selectedImageUri+"", Toast.LENGTH_SHORT).show();
                 }
             }
         }
