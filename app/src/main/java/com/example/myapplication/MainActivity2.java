@@ -19,10 +19,8 @@ public class MainActivity2 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
-
         btn = findViewById(R.id.btn);
         image = findViewById(R.id.image);
-
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,8 +39,6 @@ public class MainActivity2 extends AppCompatActivity {
         startActivityForResult(Intent.createChooser(i, "Select Picture"), SELECT_PICTURE);
     }
 
-    // this function is triggered when user
-    // selects the image from the imageChooser
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
