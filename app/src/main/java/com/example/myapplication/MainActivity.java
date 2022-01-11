@@ -71,7 +71,6 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-
     public void loadData(){
         list = new ArrayList<>();
         productDatabaseHelper = new ProductDatabaseHelper(this);
